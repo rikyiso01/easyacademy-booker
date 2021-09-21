@@ -9,7 +9,6 @@ jobs:
         with:
           python-version: '3.9'
           architecture: 'x64'
-      - run: python my_script.py
       - uses: actions/cache@v2
         id: cache-venv
         with:
@@ -20,3 +19,6 @@ jobs:
       - run: python -m venv ./.venv && . ./.venv/bin/activate && pip install -r requirements.txt
         if: steps.cache-venv.outputs.cache-hit != 'true'
       - run: . ./.venv/bin/activate && python main.py
+        env:
+          UNIGE_USERNAME: ${{ secrets.UNIGE_USERNAME }}
+          UNIGE_PASSWORD: ${{ secrets.UNIGE_PASSWORD }}
