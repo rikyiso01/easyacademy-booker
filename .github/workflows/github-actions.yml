@@ -1,6 +1,6 @@
 name: Auto run
 on:
-  workflow_dispatch:
+  repository_dispatch:
   schedule:
     - cron: '5 9,11,14,16 * * 1-5'
 jobs:
