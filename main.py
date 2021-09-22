@@ -61,7 +61,7 @@ def main():
             if not lesson["prenotata"]:
                 id = lesson["entry_id"]
                 print("Booking", id)
-                session.get(BOOKING_URL.format())
+                session.get(BOOKING_URL.format(id))
     print("No more lessons to book")
 
 
