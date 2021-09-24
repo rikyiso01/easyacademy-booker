@@ -2,7 +2,7 @@ name: Auto run
 on:
   workflow_dispatch:
   schedule:
-    - cron: '5 9,11,14,16 * * 1-5'
+    - cron: '5 7,9,12,14 * * 1-5'
 jobs:
   run:
     runs-on: ubuntu-latest
