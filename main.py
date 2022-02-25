@@ -59,6 +59,11 @@ def main():
     for group in json:
         for lesson in group["prenotazioni"]:
             if not lesson["prenotata"]:
+                if lesson["nome"] == "BASI DI DATI" and lesson["aula"] in [
+                    "Aula 711",
+                    "Aula 218",
+                ]:
+                    continue
                 id = lesson["entry_id"]
                 print("Booking", id)
                 session.get(BOOKING_URL.format(id))
